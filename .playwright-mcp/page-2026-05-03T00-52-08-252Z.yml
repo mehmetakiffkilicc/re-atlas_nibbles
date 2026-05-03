@@ -1,0 +1,107 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - img [ref=e7]
+      - generic [ref=e12]:
+        - heading "RE-Atlas" [level=1] [ref=e13]
+        - paragraph [ref=e14]: Energy Intelligence
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - button "Güneş" [ref=e17] [cursor=pointer]:
+          - img [ref=e18]
+          - generic [ref=e24]: Güneş
+        - button "Rüzgar" [ref=e25] [cursor=pointer]:
+          - img [ref=e26]
+          - generic [ref=e30]: Rüzgar
+        - button "Hibrit" [ref=e31] [cursor=pointer]:
+          - img [ref=e32]
+          - generic [ref=e34]: Hibrit
+      - generic [ref=e36]:
+        - button "İl Görünümü" [ref=e37] [cursor=pointer]:
+          - generic [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]: İl Görünümü
+        - button "Isı Haritası" [ref=e43] [cursor=pointer]:
+          - generic [ref=e44]:
+            - img [ref=e45]
+            - generic [ref=e47]: Isı Haritası
+        - button "Nokta Seçim" [ref=e48] [cursor=pointer]:
+          - generic [ref=e49]:
+            - img [ref=e50]
+            - generic [ref=e53]: Nokta Seçim
+      - button "Karşılaştır" [ref=e55] [cursor=pointer]:
+        - img [ref=e56]
+        - generic [ref=e59]: Karşılaştır
+      - button [ref=e60] [cursor=pointer]:
+        - img [ref=e61]
+  - main [ref=e64]:
+    - generic [ref=e66]:
+      - generic [ref=e67]:
+        - img [ref=e68]
+        - heading "Analiz Paneli" [level=2] [ref=e70]
+      - generic [ref=e71]:
+        - generic [ref=e72]:
+          - generic [ref=e73]:
+            - generic [ref=e74]: Kısıtlamalar
+            - img [ref=e75]
+          - generic [ref=e77]:
+            - generic [ref=e79] [cursor=pointer]:
+              - img [ref=e81]
+              - generic [ref=e84]: Ormanlık Alanlar
+            - generic [ref=e88] [cursor=pointer]:
+              - img [ref=e90]
+              - generic [ref=e93]: YEKA Sahaları
+            - generic [ref=e97] [cursor=pointer]:
+              - img [ref=e99]
+              - generic [ref=e101]: Yüksek Riskli Bölgeler
+        - generic [ref=e104]:
+          - generic [ref=e105]:
+            - generic [ref=e106]: Şebeke Altyapısı
+            - img [ref=e107]
+          - generic [ref=e109]:
+            - generic [ref=e110]:
+              - img [ref=e111]
+              - generic [ref=e117]: Max Trafo Mesafesi
+            - generic [ref=e118]:
+              - slider [ref=e119] [cursor=pointer]: "50"
+              - generic [ref=e120]: 50km
+      - button "En İyi 5 Bölge" [ref=e122] [cursor=pointer]:
+        - img [ref=e123]
+        - text: En İyi 5 Bölge
+    - generic [ref=e126]:
+      - generic [ref=e127]:
+        - generic:
+          - generic:
+            - img
+        - generic [ref=e128]:
+          - link "Leaflet" [ref=e129] [cursor=pointer]:
+            - /url: https://leafletjs.com
+            - img [ref=e130]
+            - text: Leaflet
+          - text: "| ©"
+          - link "OpenStreetMap" [ref=e134] [cursor=pointer]:
+            - /url: https://www.openstreetmap.org/copyright
+          - text: ©
+          - link "CARTO" [ref=e135] [cursor=pointer]:
+            - /url: https://carto.com/
+      - generic [ref=e136]:
+        - button [ref=e137] [cursor=pointer]:
+          - img [ref=e138]
+        - button [ref=e140] [cursor=pointer]:
+          - img [ref=e141]
+      - generic [ref=e142]:
+        - generic [ref=e143]:
+          - img [ref=e144]
+          - generic [ref=e146]: Uygunluk Katmanları
+        - generic [ref=e148]:
+          - generic [ref=e149]: "0"
+          - generic [ref=e150]: "35"
+          - generic [ref=e151]: "55"
+          - generic [ref=e152]: "75"
+          - generic [ref=e153]: "100"
+        - generic [ref=e154]:
+          - generic [ref=e157]: Yüksek Verimlilik
+          - generic [ref=e160]: Orta Seviye
+          - generic [ref=e163]: Düşük Uygunluk
+  - generic:
+    - generic: Türkiye Yenilenebilir Enerji Analitik Atlası v1.0

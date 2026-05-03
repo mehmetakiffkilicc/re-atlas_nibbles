@@ -1,0 +1,52 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: RE-Atlas
+      - generic [ref=e7]: Yenilenebilir Enerji Karar Destek Sistemi
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - button "☀ Güneş" [ref=e10] [cursor=pointer]
+        - button "💨 Rüzgar" [ref=e11] [cursor=pointer]
+        - button "⚡ Hibrit" [ref=e12] [cursor=pointer]
+      - button "⇄ Karşılaştır" [ref=e13] [cursor=pointer]
+  - generic [ref=e14]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - generic [ref=e17]: Filtreler
+        - generic [ref=e18]:
+          - generic [ref=e19] [cursor=pointer]:
+            - checkbox "Ormanları gizle" [ref=e20]
+            - generic [ref=e21]: Ormanları gizle
+          - generic [ref=e22] [cursor=pointer]:
+            - checkbox "YEKA bölgelerini göster" [ref=e23]
+            - generic [ref=e24]: YEKA bölgelerini göster
+          - generic [ref=e25] [cursor=pointer]:
+            - checkbox "Yüksek riskli alanları dışla" [ref=e26]
+            - generic [ref=e27]: Yüksek riskli alanları dışla
+          - generic [ref=e28]:
+            - generic [ref=e29]: Trafo mesafesi (max km)
+            - spinbutton [ref=e30]
+      - separator [ref=e31]
+      - button "★ Top 5 Bölge" [ref=e32] [cursor=pointer]
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - generic:
+          - generic [ref=e35]:
+            - button "Zoom in" [ref=e36] [cursor=pointer]: +
+            - button "Zoom out" [ref=e37] [cursor=pointer]: −
+          - generic [ref=e38]:
+            - link "Leaflet" [ref=e39] [cursor=pointer]:
+              - /url: https://leafletjs.com
+              - img [ref=e40]
+              - text: Leaflet
+            - text: "| ©"
+            - link "OpenStreetMap" [ref=e44] [cursor=pointer]:
+              - /url: https://www.openstreetmap.org/copyright
+            - text: ©
+            - link "CARTO" [ref=e45] [cursor=pointer]:
+              - /url: https://carto.com/
+      - generic [ref=e46]:
+        - generic [ref=e47]: Uygunluk Skoru
+        - generic [ref=e50]: Yüksek (>70)
+        - generic [ref=e53]: Orta (40–70)
+        - generic [ref=e56]: Düşük (<40)

@@ -1,0 +1,20 @@
+{
+  "lat": 40.213, "lon": 28.366, "energy_type": "wind", "score": 84.0,
+  "province_name": "Bursa", "province_avg_score": 78.0,
+  "breakdown": {
+    "resource_potential": 0.82, "land_use": 0.70, "grid_proximity": 0.95,
+    "risk_factor": 0.85, "economic_feasibility": 0.65
+  },
+  "explanation": {
+    "summary": "Bu koordinat rüzgar enerjisi için yüksek uygunluk skoru almaktadır.",
+    "highlights": ["Şebekeye çok yakın: Karacabey TM (3.2 km)", "Yüksek rüzgar kaynağı potansiyeli (82%)", "Uygun arazi kullanımı: tarım arazisi"],
+    "warnings": []
+  },
+  "nearest_substation": {"name": "Karacabey TM", "voltage_kv": 154, "distance_km": 3.2, "lat": 40.215, "lon": 28.370},
+  "yeka_zone": null,
+  "financials": {
+    "capex_tl": 90000000, "annual_production_kwh": 5256000,
+    "payback_years": 8.5, "lcoe_tl_per_kwh": 0.82, "capacity_factor": 0.30,
+    "disclaimer": "Ön değerlendirme amaçlıdır."
+  }
+}

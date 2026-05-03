@@ -1,0 +1,117 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]: RE-Atlas
+        - generic [ref=e7]: Yenilenebilir Enerji Karar Destek Sistemi
+      - generic [ref=e8]:
+        - generic [ref=e9]:
+          - button "☀ Güneş" [ref=e10] [cursor=pointer]
+          - button "💨 Rüzgar" [ref=e11] [cursor=pointer]
+          - button "⚡ Hibrit" [ref=e12] [cursor=pointer]
+        - button "⇄ Karşılaştır" [ref=e13] [cursor=pointer]
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - generic [ref=e16]:
+          - generic [ref=e17]: Filtreler
+          - generic [ref=e18]:
+            - generic [ref=e19] [cursor=pointer]:
+              - checkbox "Ormanları gizle" [ref=e20]
+              - generic [ref=e21]: Ormanları gizle
+            - generic [ref=e22] [cursor=pointer]:
+              - checkbox "YEKA bölgelerini göster" [ref=e23]
+              - generic [ref=e24]: YEKA bölgelerini göster
+            - generic [ref=e25] [cursor=pointer]:
+              - checkbox "Yüksek riskli alanları dışla" [ref=e26]
+              - generic [ref=e27]: Yüksek riskli alanları dışla
+            - generic [ref=e28]:
+              - generic [ref=e29]: Trafo mesafesi (max km)
+              - spinbutton [ref=e30]
+        - separator [ref=e31]
+        - button "★ Top 5 Bölge" [ref=e32] [cursor=pointer]
+      - generic [ref=e33]:
+        - generic [active] [ref=e34]:
+          - generic:
+            - generic:
+              - img
+          - generic:
+            - generic [ref=e35]:
+              - button "Zoom in" [ref=e36] [cursor=pointer]: +
+              - button "Zoom out" [ref=e37] [cursor=pointer]: −
+            - generic [ref=e38]:
+              - link "Leaflet" [ref=e39] [cursor=pointer]:
+                - /url: https://leafletjs.com
+                - img [ref=e40]
+                - text: Leaflet
+              - text: "| ©"
+              - link "OpenStreetMap" [ref=e44] [cursor=pointer]:
+                - /url: https://www.openstreetmap.org/copyright
+              - text: ©
+              - link "CARTO" [ref=e45] [cursor=pointer]:
+                - /url: https://carto.com/
+        - generic [ref=e46]:
+          - generic [ref=e47]: Uygunluk Skoru
+          - generic [ref=e50]: Yüksek (>70)
+          - generic [ref=e53]: Orta (40–70)
+          - generic [ref=e56]: Düşük (<40)
+      - generic [ref=e220]:
+        - generic [ref=e221]:
+          - generic [ref=e222]:
+            - generic [ref=e223]: Seçili Nokta
+            - generic [ref=e224]: 39.0021, 35.0024
+          - generic [ref=e225]: "81"
+        - generic [ref=e226]:
+          - paragraph [ref=e227]: Bu koordinat güneş enerjisi için yüksek uygunluk skoru almaktadır.
+          - paragraph [ref=e228]: ✓ Yüksek güneş kaynağı potansiyeli (89%)
+          - paragraph [ref=e229]: "✓ Şebekeye çok yakın: Kalaba TM (5.6 km)"
+          - paragraph [ref=e230]: "✓ Hızlı geri ödeme: ~4 yıl"
+        - generic [ref=e231]:
+          - generic [ref=e232]: Bileşen Skorları
+          - generic [ref=e234]:
+            - generic [ref=e235]: Kaynak Potansiyeli
+            - generic [ref=e236]: "89"
+          - generic [ref=e240]:
+            - generic [ref=e241]: Arazi Kullanımı
+            - generic [ref=e242]: "30"
+          - generic [ref=e246]:
+            - generic [ref=e247]: Şebeke Yakınlığı
+            - generic [ref=e248]: "99"
+          - generic [ref=e252]:
+            - generic [ref=e253]: Risk Faktörü
+            - generic [ref=e254]: "90"
+          - generic [ref=e258]:
+            - generic [ref=e259]: Ekonomik Uygunluk
+            - generic [ref=e260]: "96"
+        - generic [ref=e263]:
+          - generic [ref=e264]: En Yakın Trafo
+          - generic [ref=e265]: Kalaba TM
+          - generic [ref=e266]: 5.6 km
+        - generic [ref=e267]:
+          - generic [ref=e268]: 48 Saatlik Tahmin
+          - img [ref=e271]:
+            - generic [ref=e273]:
+              - generic [ref=e275]: 03:00
+              - generic [ref=e277]: 09:00
+              - generic [ref=e279]: 15:00
+              - generic [ref=e281]: 21:00
+            - generic [ref=e283]:
+              - generic [ref=e285]: "0"
+              - generic [ref=e287]: "1"
+              - generic [ref=e289]: "2"
+              - generic [ref=e291]: "4"
+        - generic [ref=e302]:
+          - generic [ref=e303]: Finansal Özet
+          - generic [ref=e304]:
+            - generic [ref=e305]: CAPEX
+            - generic [ref=e306]: 30 M TL
+          - generic [ref=e307]:
+            - generic [ref=e308]: Yıllık Üretim
+            - generic [ref=e309]: 3704 MWh
+          - generic [ref=e310]:
+            - generic [ref=e311]: Geri Ödeme
+            - generic [ref=e312]: ~3.5 yıl
+          - generic [ref=e313]:
+            - generic [ref=e314]: Kapasite Faktörü
+            - generic [ref=e315]: 21.1%
+          - paragraph [ref=e316]: Ön değerlendirme amaçlıdır. Yatırım kararı için saha ölçümü gereklidir.
+  - generic [ref=e317]: "1"

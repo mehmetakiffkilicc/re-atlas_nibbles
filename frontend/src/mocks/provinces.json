@@ -1,0 +1,10 @@
+[
+  {"province_id": "16", "province_name": "Bursa", "score": 78, "energy_type": "wind", "centroid_lat": 40.18, "centroid_lon": 29.07, "geometry": {"type": "Polygon", "coordinates": [[[28.3, 40.5], [29.8, 40.5], [29.8, 39.8], [28.3, 39.8], [28.3, 40.5]]]}},
+  {"province_id": "35", "province_name": "İzmir", "score": 82, "energy_type": "wind", "centroid_lat": 38.42, "centroid_lon": 27.13, "geometry": {"type": "Polygon", "coordinates": [[[26.3, 39.0], [28.0, 39.0], [28.0, 37.8], [26.3, 37.8], [26.3, 39.0]]]}},
+  {"province_id": "06", "province_name": "Ankara", "score": 65, "energy_type": "wind", "centroid_lat": 39.93, "centroid_lon": 32.86, "geometry": {"type": "Polygon", "coordinates": [[[31.8, 40.6], [34.0, 40.6], [34.0, 39.2], [31.8, 39.2], [31.8, 40.6]]]}},
+  {"province_id": "42", "province_name": "Konya", "score": 71, "energy_type": "wind", "centroid_lat": 37.87, "centroid_lon": 32.48, "geometry": {"type": "Polygon", "coordinates": [[[31.2, 38.8], [34.0, 38.8], [34.0, 37.0], [31.2, 37.0], [31.2, 38.8]]]}},
+  {"province_id": "38", "province_name": "Kayseri", "score": 74, "energy_type": "wind", "centroid_lat": 38.73, "centroid_lon": 35.49, "geometry": {"type": "Polygon", "coordinates": [[[34.5, 39.3], [36.5, 39.3], [36.5, 38.0], [34.5, 38.0], [34.5, 39.3]]]}},
+  {"province_id": "10", "province_name": "Balıkesir", "score": 85, "energy_type": "wind", "centroid_lat": 39.65, "centroid_lon": 27.88, "geometry": {"type": "Polygon", "coordinates": [[[27.0, 40.2], [28.8, 40.2], [28.8, 39.0], [27.0, 39.0], [27.0, 40.2]]]}},
+  {"province_id": "48", "province_name": "Muğla", "score": 79, "energy_type": "wind", "centroid_lat": 37.22, "centroid_lon": 28.36, "geometry": {"type": "Polygon", "coordinates": [[[27.5, 37.8], [29.5, 37.8], [29.5, 36.5], [27.5, 36.5], [27.5, 37.8]]]}},
+  {"province_id": "63", "province_name": "Şanlıurfa", "score": 88, "energy_type": "solar", "centroid_lat": 37.16, "centroid_lon": 38.80, "geometry": {"type": "Polygon", "coordinates": [[[37.8, 37.8], [39.8, 37.8], [39.8, 36.5], [37.8, 36.5], [37.8, 37.8]]]}}
+]

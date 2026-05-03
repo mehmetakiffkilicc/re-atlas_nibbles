@@ -1,0 +1,12 @@
+[
+  {"id": "yeka-01", "name": "Karapınar YEKA", "lat": 37.72, "lon": 33.55, "radius_km": 50, "energy_type": "solar"},
+  {"id": "yeka-02", "name": "Kıyıköy YEKA", "lat": 41.63, "lon": 28.09, "radius_km": 30, "energy_type": "wind"},
+  {"id": "yeka-03", "name": "Saros YEKA", "lat": 40.71, "lon": 26.45, "radius_km": 25, "energy_type": "wind"},
+  {"id": "yeka-04", "name": "Akhisar YEKA", "lat": 38.92, "lon": 27.83, "radius_km": 30, "energy_type": "wind"},
+  {"id": "yeka-05", "name": "Niğde-Bor YEKA", "lat": 37.86, "lon": 34.55, "radius_km": 40, "energy_type": "solar"},
+  {"id": "yeka-06", "name": "Şanlıurfa YEKA", "lat": 37.25, "lon": 38.85, "radius_km": 50, "energy_type": "solar"},
+  {"id": "yeka-07", "name": "Hatay YEKA", "lat": 36.60, "lon": 36.40, "radius_km": 30, "energy_type": "solar"},
+  {"id": "yeka-08", "name": "Konya Kulu YEKA", "lat": 38.93, "lon": 33.08, "radius_km": 45, "energy_type": "hybrid"},
+  {"id": "yeka-09", "name": "Balıkesir YEKA", "lat": 39.65, "lon": 27.88, "radius_km": 35, "energy_type": "wind"},
+  {"id": "yeka-10", "name": "Muğla YEKA", "lat": 37.22, "lon": 28.36, "radius_km": 30, "energy_type": "hybrid"}
+]

@@ -1,0 +1,47 @@
+{
+  "40.213,28.366": {
+    "summary": {
+      "avg_wind_speed_50m": 5.52,
+      "avg_wind_speed_100m": 6.095,
+      "ghi_annual_kwh_m2": 1561.8,
+      "avg_temperature_c": 16.8,
+      "source": "nasa_power"
+    }
+  },
+  "38.733,35.485": {
+    "summary": {
+      "avg_wind_speed_50m": 4.58,
+      "avg_wind_speed_100m": 5.057,
+      "ghi_annual_kwh_m2": 1780.7,
+      "avg_temperature_c": 13.1,
+      "source": "nasa_power"
+    }
+  },
+  "38.737,33.371": {
+    "summary": {
+      "avg_wind_speed_50m": 5.03,
+      "avg_wind_speed_100m": 5.554,
+      "ghi_annual_kwh_m2": 1786.8,
+      "avg_temperature_c": 8.3,
+      "source": "nasa_power"
+    }
+  },
+  "41.218,28.45": {
+    "summary": {
+      "avg_wind_speed_50m": 6.31,
+      "avg_wind_speed_100m": 6.967,
+      "ghi_annual_kwh_m2": 1463.3,
+      "avg_temperature_c": 15.3,
+      "source": "nasa_power"
+    }
+  },
+  "40.984,28.725": {
+    "summary": {
+      "avg_wind_speed_50m": 6.31,
+      "avg_wind_speed_100m": 6.967,
+      "ghi_annual_kwh_m2": 1561.8,
+      "avg_temperature_c": 16.0,
+      "source": "nasa_power"
+    }
+  }
+}

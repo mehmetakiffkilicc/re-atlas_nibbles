@@ -1,0 +1,97 @@
+[     168ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:21550
+[  716767ms] ReferenceError: HeatmapLayer is not defined
+    at http://localhost:5174/src/components/MapCanvas.tsx?t=1777756136703:108:34
+    at renderWithHooks (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:11548:26)
+    at updateForwardRef (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:14325:28)
+    at beginWork (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:15946:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:3674:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:3699:24)
+    at invokeGuardedCallback (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:3733:39)
+    at beginWork$1 (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:19765:15)
+    at performUnitOfWork (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:19198:20)
+    at workLoopSync (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:19137:13)
+[  716771ms] ReferenceError: HeatmapLayer is not defined
+    at http://localhost:5174/src/components/MapCanvas.tsx?t=1777756136703:108:34
+    at renderWithHooks (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:11548:26)
+    at updateForwardRef (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:14325:28)
+    at beginWork (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:15946:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:3674:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:3699:24)
+    at invokeGuardedCallback (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:3733:39)
+    at beginWork$1 (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:19765:15)
+    at performUnitOfWork (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:19198:20)
+    at workLoopSync (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:19137:13)
+[  716772ms] [ERROR] The above error occurred in the <MapCanvas> component:
+
+    at http://localhost:5174/src/components/MapCanvas.tsx?t=1777756136703:59:18
+    at div
+    at main
+    at div
+    at App (http://localhost:5174/src/App.tsx?t=1777755365680:31:18)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:14031
+[  716779ms] ReferenceError: HeatmapLayer is not defined
+    at http://localhost:5174/src/components/MapCanvas.tsx?t=1777756136703:108:34
+    at renderWithHooks (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:11548:26)
+    at updateForwardRef (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:14325:28)
+    at beginWork (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:15946:22)
+    at beginWork$1 (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:19753:22)
+    at performUnitOfWork (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:19198:20)
+    at workLoopSync (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:19137:13)
+    at renderRootSync (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:19116:15)
+    at recoverFromConcurrentError (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:18736:28)
+    at performSyncWorkOnRoot (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:18879:28)
+[  722110ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:5174/src/components/MapCanvas.tsx?t=1777756142202:0
+[  722111ms] [ERROR] [hmr] Failed to reload /src/components/MapCanvas.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5174/@vite/client:175
+[ 1337113ms] ReferenceError: useMap is not defined
+    at GridLayer (http://localhost:5174/src/components/GridLayer.tsx?t=1777756757129:112:15)
+    at renderWithHooks (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:11548:26)
+    at mountIndeterminateComponent (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:14926:21)
+    at beginWork (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:15914:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:3674:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:3699:24)
+    at invokeGuardedCallback (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:3733:39)
+    at beginWork$1 (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:19765:15)
+    at performUnitOfWork (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:19198:20)
+    at workLoopSync (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:19137:13)
+[ 1337116ms] ReferenceError: useMap is not defined
+    at GridLayer (http://localhost:5174/src/components/GridLayer.tsx?t=1777756757129:112:15)
+    at renderWithHooks (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:11548:26)
+    at mountIndeterminateComponent (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:14926:21)
+    at beginWork (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:15914:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:3674:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:3699:24)
+    at invokeGuardedCallback (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:3733:39)
+    at beginWork$1 (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:19765:15)
+    at performUnitOfWork (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:19198:20)
+    at workLoopSync (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:19137:13)
+[ 1337116ms] [ERROR] The above error occurred in the <GridLayer> component:
+
+    at GridLayer (http://localhost:5174/src/components/GridLayer.tsx?t=1777756757129:112:15)
+    at div
+    at MapContainerComponent (http://localhost:5174/node_modules/.vite/deps/react-leaflet.js?v=711620f1:545:34)
+    at div
+    at http://localhost:5174/src/components/MapCanvas.tsx?t=1777756156570:60:18
+    at div
+    at main
+    at div
+    at App (http://localhost:5174/src/App.tsx?t=1777755365680:31:18)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:14031
+[ 1337126ms] ReferenceError: useMap is not defined
+    at GridLayer (http://localhost:5174/src/components/GridLayer.tsx?t=1777756757129:112:15)
+    at renderWithHooks (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:11548:26)
+    at mountIndeterminateComponent (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:14926:21)
+    at beginWork (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:15914:22)
+    at beginWork$1 (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:19753:22)
+    at performUnitOfWork (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:19198:20)
+    at workLoopSync (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:19137:13)
+    at renderRootSync (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:19116:15)
+    at recoverFromConcurrentError (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:18736:28)
+    at performSyncWorkOnRoot (http://localhost:5174/node_modules/.vite/deps/chunk-PJEEZAML.js?v=4cfe4190:18879:28)
+[ 1343685ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:5174/api/forecast?lat=36.86204269508728&lon=33.24462890625001&type=solar&hours=48:0
+[ 1343689ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:5174/api/provinces?type=solar:0
+[ 1343700ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:5174/api/forecast?lat=36.86204269508728&lon=33.24462890625001&type=solar&hours=48:0
+[ 1343721ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:5174/api/provinces?type=solar:0
