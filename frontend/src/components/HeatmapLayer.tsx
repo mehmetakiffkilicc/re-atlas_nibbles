@@ -3,12 +3,37 @@ import { useMap } from 'react-leaflet'
 import * as L from 'leaflet'
 import { useAppStore } from '../store/useAppStore'
 
-function getHeatColor(score: number, opacity: number = 1): string {
-  if (score >= 80) return `rgba(34, 197, 94, ${opacity})`
-  if (score >= 65) return `rgba(163, 230, 53, ${opacity})`
-  if (score >= 50) return `rgba(250, 204, 21, ${opacity})`
-  if (score >= 35) return `rgba(249, 115, 22, ${opacity})`
-  return `rgba(239, 68, 68, ${opacity})`
+import type { EnergyType } from '../types'
+
+const HEAT_PALETTE: Record<EnergyType, Record<string, [number, number, number]>> = {
+  solar: {
+    high:   [52, 211, 153],  // Emerald 400
+    medium: [251, 191, 36],  // Amber 400
+    low:    [251, 146, 60],  // Orange 400
+    poor:   [248, 113, 113], // Red 400
+  },
+  wind: {
+    high:   [34, 211, 238],  // Cyan 400
+    medium: [56, 189, 248],  // Sky 400
+    low:    [129, 140, 248], // Indigo 400
+    poor:   [167, 139, 250], // Purple 400
+  },
+  hybrid: {
+    high:   [167, 139, 250],
+    medium: [139, 92, 246],
+    low:    [109, 40, 217],
+    poor:   [76, 29, 149],
+  },
+}
+
+function getHeatColor(score: number, type: EnergyType, opacity: number = 1): string {
+  const palette = HEAT_PALETTE[type] || HEAT_PALETTE.wind
+  let rgb = palette.poor
+  if (score >= 75) rgb = palette.high
+  else if (score >= 55) rgb = palette.medium
+  else if (score >= 35) rgb = palette.low
+  
+  return `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, ${opacity})`
 }
 
 class HeatCanvasLayer extends L.Layer {
@@ -18,6 +43,11 @@ class HeatCanvasLayer extends L.Layer {
   private _animFrame: number = 0
   private _isDirty = false
   private _offscreen: HTMLCanvasElement | null = null
+  private _energyType: EnergyType = 'wind'
+
+  setEnergyType(type: EnergyType) {
+    this._energyType = type
+  }
 
   setData(data: { lat: number; lon: number; score: number }[]) {
     this._data = data
@@ -99,8 +129,6 @@ class HeatCanvasLayer extends L.Layer {
     this._offscreen.height = size.y
     offCtx.clearRect(0, 0, size.x, size.y)
 
-    const center = map.getCenter()
-
     const visible = this._data.filter(pt => {
       const px = map.latLngToContainerPoint([pt.lat, pt.lon])
       return px.x > -r * 2 && px.x < size.x + r * 2 && px.y > -r * 2 && px.y < size.y + r * 2
@@ -112,8 +140,8 @@ class HeatCanvasLayer extends L.Layer {
       offCtx.beginPath()
       offCtx.arc(px.x, px.y, r * 0.8, 0, Math.PI * 2)
       offCtx.shadowBlur = r * 1.2
-      offCtx.shadowColor = getHeatColor(pt.score, 0.8)
-      offCtx.fillStyle = getHeatColor(pt.score, 0.4)
+      offCtx.shadowColor = getHeatColor(pt.score, this._energyType, 0.8)
+      offCtx.fillStyle = getHeatColor(pt.score, this._energyType, 0.4)
       offCtx.fill()
     }
 
@@ -122,8 +150,8 @@ class HeatCanvasLayer extends L.Layer {
     for (const pt of visible) {
       const px = map.latLngToContainerPoint([pt.lat, pt.lon])
       const grad = offCtx.createRadialGradient(px.x, px.y, 0, px.x, px.y, r)
-      grad.addColorStop(0, getHeatColor(pt.score, 0.8))
-      grad.addColorStop(1, getHeatColor(pt.score, 0))
+      grad.addColorStop(0, getHeatColor(pt.score, this._energyType, 0.8))
+      grad.addColorStop(1, getHeatColor(pt.score, this._energyType, 0))
       offCtx.fillStyle = grad
       offCtx.fillRect(px.x - r, px.y - r, r * 2, r * 2)
     }
@@ -148,6 +176,8 @@ export function HeatmapLayer() {
       return
     }
 
+    const { energyType } = useAppStore.getState()
+
     if (!provinceScores.length) return
 
     if (!layerRef.current) {
@@ -155,6 +185,7 @@ export function HeatmapLayer() {
       layerRef.current.addTo(map)
     }
 
+    layerRef.current.setEnergyType(energyType)
     layerRef.current.setData(
       provinceScores.map((p) => ({ lat: p.centroid_lat, lon: p.centroid_lon, score: p.score }))
     )

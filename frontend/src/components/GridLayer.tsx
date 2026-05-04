@@ -3,23 +3,37 @@ import { useMap, useMapEvents } from 'react-leaflet'
 import * as L from 'leaflet'
 import { useAppStore } from '../store/useAppStore'
 import { getGrid, getGridHires } from '../api/client'
-import type { ProvinceScore } from '../types'
+import type { ProvinceScore, EnergyType } from '../types'
 
-// Pre-baked radial gradient textures — keyed by "colorKey:diameter", reused across frames
+// Pre-baked radial gradient textures — keyed by "mode-score:diameter", reused across frames
 const gradientCache = new Map<string, ImageBitmap>()
 
-const COLOR_STOPS: Record<string, [number, number, number]> = {
-  green:  [16, 185, 129],
-  yellow: [245, 158, 11],
-  orange: [249, 115, 22],
-  red:    [239, 68, 68],
+const PALETTES: Record<EnergyType, Record<string, [number, number, number]>> = {
+  solar: {
+    high:   [52, 211, 153],  // Emerald 400
+    medium: [251, 191, 36],  // Amber 400
+    low:    [251, 146, 60],  // Orange 400
+    poor:   [248, 113, 113], // Red 400
+  },
+  wind: {
+    high:   [34, 211, 238],  // Cyan 400
+    medium: [56, 189, 248],  // Sky 400
+    low:    [129, 140, 248], // Indigo 400
+    poor:   [167, 139, 250], // Purple 400
+  },
+  hybrid: {
+    high:   [167, 139, 250], // Purple 400
+    medium: [139, 92, 246],  // Violet 500
+    low:    [109, 40, 217],  // Violet 700
+    poor:   [76, 29, 149],   // Purple 900
+  }
 }
 
-function scoreKey(s: number): string {
-  if (s >= 75) return 'green'
-  if (s >= 55) return 'yellow'
-  if (s >= 35) return 'orange'
-  return 'red'
+function getScoreKey(s: number): string {
+  if (s >= 75) return 'high'
+  if (s >= 55) return 'medium'
+  if (s >= 35) return 'low'
+  return 'poor'
 }
 
 // Snap diameter to nearest power-of-2 so adjacent zoom levels share cached bitmaps
@@ -27,15 +41,18 @@ function snapDiameter(d: number): number {
   return Math.max(8, 1 << Math.round(Math.log2(Math.max(1, d))))
 }
 
-async function getGradientBitmap(colorKey: string, diameter: number): Promise<ImageBitmap | null> {
-  const key = `${colorKey}:${diameter}`
+async function getGradientBitmap(type: EnergyType, scoreKey: string, diameter: number): Promise<ImageBitmap | null> {
+  const key = `${type}:${scoreKey}:${diameter}`
   if (gradientCache.has(key)) return gradientCache.get(key)!
-  const [r, g, b] = COLOR_STOPS[colorKey]
+  
+  const palette = PALETTES[type] || PALETTES.wind
+  const [r, g, b] = palette[scoreKey] || [128, 128, 128]
+  
   const oc = new OffscreenCanvas(diameter, diameter)
   const ctx = oc.getContext('2d')!
   const cx = diameter / 2
   const grad = ctx.createRadialGradient(cx, cx, 0, cx, cx, cx)
-  grad.addColorStop(0,    `rgba(${r},${g},${b},0.60)`)
+  grad.addColorStop(0,    `rgba(${r},${g},${b},0.65)`)
   grad.addColorStop(0.55, `rgba(${r},${g},${b},0.25)`)
   grad.addColorStop(1,    `rgba(${r},${g},${b},0)`)
   ctx.fillStyle = grad
@@ -112,7 +129,7 @@ export function GridLayer() {
   const projectCells = useCallback((cells: CellData[], zoom: number): ProjCell[] => {
     return cells.map(c => {
       const proj = map.project(L.latLng(c.lat, c.lon), zoom)
-      return [proj.x, proj.y, scoreKey(c.score)]
+      return [proj.x, proj.y, getScoreKey(c.score)]
     })
   }, [map])
 
@@ -198,18 +215,22 @@ export function GridLayer() {
         grouped[v.key].push(v)
       }
       for (const [key, pts] of Object.entries(grouped)) {
-        const [r, g, b] = COLOR_STOPS[key]
-        ctx.fillStyle = `rgba(${r},${g},${b},0.75)`
+        const palette = PALETTES[energyType] || PALETTES.wind
+        const [r, g, b] = palette[key] || [128, 128, 128]
+        ctx.fillStyle = `rgba(${r},${g},${b},0.85)`
         for (const p of pts) ctx.fillRect(p.sx - half, p.sy - half, cellPx, cellPx)
       }
     } else {
       const diameter = snapDiameter(Math.round(R * 2))
       const bitmaps  = bitmapsRef.current
 
-      if (bitmapSizeRef.current === diameter && Object.keys(bitmaps).length === 4) {
+      const neededKeys = ['high', 'medium', 'low', 'poor']
+      const hasAllBitmaps = neededKeys.every(k => bitmaps[`${energyType}:${k}`])
+
+      if (bitmapSizeRef.current === diameter && hasAllBitmaps) {
         // Fast path: draw pre-baked gradient bitmaps (no gradient creation per cell)
         for (const v of visible) {
-          const bmp = bitmaps[v.key]
+          const bmp = bitmaps[`${energyType}:${v.key}`]
           if (bmp) ctx.drawImage(bmp, v.sx - R, v.sy - R, diameter, diameter)
         }
       } else {
@@ -220,18 +241,21 @@ export function GridLayer() {
           grouped[v.key].push(v)
         }
         for (const [key, pts] of Object.entries(grouped)) {
-          const [r, g, b] = COLOR_STOPS[key]
-          ctx.fillStyle = `rgba(${r},${g},${b},0.35)`
+          const palette = PALETTES[energyType] || PALETTES.wind
+          const [r, g, b] = palette[key] || [128, 128, 128]
+          ctx.fillStyle = `rgba(${r},${g},${b},0.45)`
           for (const p of pts) ctx.fillRect(p.sx - R, p.sy - R, diameter, diameter)
         }
 
         // Build bitmaps async for the current snapped diameter
-        if (bitmapSizeRef.current !== diameter) {
+        if (bitmapSizeRef.current !== diameter || !hasAllBitmaps) {
           bitmapSizeRef.current = diameter
           bitmapsRef.current = {}
           Promise.all(
-            Object.keys(COLOR_STOPS).map(key =>
-              getGradientBitmap(key, diameter).then(bmp => { bitmapsRef.current[key] = bmp })
+            neededKeys.map(key =>
+              getGradientBitmap(energyType, key, diameter).then(bmp => { 
+                bitmapsRef.current[`${energyType}:${key}`] = bmp 
+              })
             )
           ).then(() => {
             if (canvasRef.current && cellsRef.current.length) draw(canvasRef.current)
@@ -241,15 +265,16 @@ export function GridLayer() {
 
       // Subtle ring on high-score clusters
       if (zoom >= 6) {
-        const high = visible.filter(v => v.key === 'green')
+        const high = visible.filter(v => v.key === 'high')
         if (high.length >= 5) {
-          const [r, g, b] = COLOR_STOPS['green']
-          ctx.strokeStyle = `rgba(${r},${g},${b},0.25)`
-          ctx.lineWidth = 1
-          ctx.setLineDash([3, 4])
+          const palette = PALETTES[energyType] || PALETTES.wind
+          const [r, g, b] = palette['high']
+          ctx.strokeStyle = `rgba(${r},${g},${b},0.35)`
+          ctx.lineWidth = 1.5
+          ctx.setLineDash([4, 4])
           for (const c of high) {
             ctx.beginPath()
-            ctx.arc(c.sx, c.sy, R * 0.6, 0, Math.PI * 2)
+            ctx.arc(c.sx, c.sy, R * 0.7, 0, Math.PI * 2)
             ctx.stroke()
           }
           ctx.setLineDash([])

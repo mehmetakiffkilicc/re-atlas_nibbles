@@ -11,6 +11,7 @@ import { TopFiveCard } from './components/TopFiveCard'
 import { CompareView } from './components/CompareView'
 import { LiveWeatherBadge } from './components/LiveWeatherBadge'
 import { GridLoadingIndicator } from './components/GridLoadingIndicator'
+import { Legend } from './components/Legend'
 import { useAppStore } from './store/useAppStore'
 import type { MapCanvasHandle } from './components/MapCanvas'
 import './styles/globals.css'
@@ -133,6 +134,7 @@ export default function App() {
         <div className="w-2 h-2 rounded-full bg-accent-wind animate-pulse" />
         <span className="font-medium tracking-wide">Türkiye Yenilenebilir Enerji Analitik Atlası v1.0</span>
       </motion.div>
+      <Legend />
     </div>
   )
 }

@@ -18,6 +18,19 @@
   --score-medium: #F59E0B;
   --score-low: #EF4444;
 
+  --solar-high: #34D399;
+  --solar-medium: #FBBF24;
+  --solar-low: #FB923C;
+  --solar-poor: #F87171;
+  --wind-high: #22D3EE;
+  --wind-medium: #38BDF8;
+  --wind-low: #818CF8;
+  --wind-poor: #A78BFA;
+  --hybrid-high: #A78BFA;
+  --hybrid-medium: #8B5CF6;
+  --hybrid-low: #6D28D9;
+  --hybrid-poor: #4C1D95;
+
   --text-primary: #FFFFFF;
   --text-secondary: #94A3B8;
   --text-muted: #475569;

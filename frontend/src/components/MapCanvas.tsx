@@ -144,7 +144,6 @@ export const MapCanvas = forwardRef<MapCanvasHandle>((_, ref) => {
         </button>
       </div>
 
-      <Legend />
     </div>
   )
 })
